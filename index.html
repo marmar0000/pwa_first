@@ -6,17 +6,19 @@
     <title>Hello World PWA</title>
     <!-- PWAの基本的なメタタグ -->
     <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./icons/icon-192.png">
     <meta name="theme-color" content="#ffffff">
-    <!-- Service Workerの登録（後でsw.jsを作成） -->
+    
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(registration => console.log('SW registered: ', registration))
-                    .catch(registrationError => console.log('SW registration failed: ', registrationError));
-            });
-        }
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('SW registered: ', reg))
+          .catch(err => console.log('SW registration failed: ', err));
+      });
+    }
     </script>
+
 <style>
 body {
     display: flex;
