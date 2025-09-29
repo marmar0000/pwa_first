@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World PWA</title>
+    <!-- PWAの基本的なメタタグ -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Service Workerの登録（後でsw.jsを作成） -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered: ', registration))
+                    .catch(registrationError => console.log('SW registration failed: ', registrationError));
+            });
+        }
+    </script>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+h1 {
+    margin: 0;
+}
+</style>
+</head>
+<body>
+    <h1>Hello World</h1>
+</body>
+</html>
