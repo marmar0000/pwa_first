@@ -2,8 +2,8 @@ const CACHE_NAME = 'hello-world-pwa-v1';
 const urlsToCache = [
   './',
   './index.html',
-  './styles.css',
-  './script.js'
+  // './styles.css',
+  // './script.js'
 ];
 
 self.addEventListener('install', function(event) {
